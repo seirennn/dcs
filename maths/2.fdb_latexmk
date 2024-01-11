@@ -1,0 +1,15 @@
+# Fdb version 4
+["latex"] 1703267270 "/home/seirennn/maths/2.tex" "2.dvi" "2" 1703267270 2
+  "/home/seirennn/maths/2.tex" 1703179775 6749 7a07a2eb1069eb828538092029f96e1f ""
+  "/usr/share/texmf-dist/tex/latex/base/report.cls" 1689853683 23203 3d69f4661dd74a5edb1507ff18e40fb9 ""
+  "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1689853683 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
+  "/var/lib/texmf/web2c/pdftex/latex.fmt" 1703026129 6767910 6243da61858cf013dc27090f81e21988 ""
+  "2.aux" 1703179821 8 a94a2480d3289e625eea47cd1b285758 "latex"
+  "2.tex" 1703179775 6749 7a07a2eb1069eb828538092029f96e1f ""
+  "preamble.tex" 0 -1 0 ""
+  (generated)
+  "2.aux"
+  "2.dvi"
+  "2.log"
+  (rewritten before read)

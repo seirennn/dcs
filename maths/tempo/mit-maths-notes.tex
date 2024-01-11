@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{amssymb, mathrsfs, enumitem}
+\usepackage{tikz-cd}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath, epsfig, colortbl}
+\usepackage[breakable, skins]{tcolorbox}
+\setlength{\parskip}{8pt}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{fact}{Fact}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newenvironment{solution} {\paragraph{Solution.}}{\hfill$\square$}
+\renewenvironment{proof} {\paragraph{Proof.}}{\hfill$\square$}
+\renewcommand{\today}{}
+\captionsetup{margin=.7in, format=hang}
+
+\newtcolorbox{examplebox}{ breakable, enhanced}
+\newtcolorbox{gptbox}{ breakable, enhanced,  colback  = blue!10}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\oddsidemargin}{-.8in}
+\addtolength{\textwidth}{2in}
+\addtolength{\textheight}{2.15in}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\abs}[1]{\left| #1\right|}
+\newcommand{\la}{\Leftarrow}
+\newcommand{\ra}{\Rightarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+
+\newcommand{\ex}[1]{\begin{examplebox}\begin{example} #1 \end{example}\end{examplebox}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ba}{\backslash}
+
+\def\cents{\hbox{\rm\rlap/c}}
+
+
+
+
+\begin{document}
+\title{MIT Fall 2010 Lecture notes: 6.042J Mathematics for Computer Science }
+\author{Notes by Lanso Humtsoe}
+\maketitle
+\section{Introduction and Proofs}
+
+Let us begin on these lectures notes on Mathematics for Computer science first by defining what a proof is. 
+
+\begin{definition}
+In the context of Mathematics, A proof is a logical argument that establishes the truth of a mathematical statement, in other definition, A mathematical proof of a proposition is a chain of logical deductions leading to the proposition from a base to set of axioms.
+\end{definition}
+ The purpose of a proof is to establish both oneself and others that a particular assetion or a preposition is     true, based on a set of axioms and previously estalished truths(Theorems). 
+
+ Here are the key elements that are included in a mathematical proofs:
+
+\begin{itemize}
+  \item \textbf{Statement of Theorem and Proposition:} clearing stating what is to be proven.
+  \item \textbf{Basis of Assumptions:} beginning with a set of accepted axioms or previously proven theorems. 
+  \item \textbf{Logical deductions:} A sequence of logical steps, using accepted rules of inference, that lead from the assumptions to the conclusion.
+  \item \textbf{Conclusion:}A clear and a unambiguous statement that the theorem or preposition has been proved.
+\end{itemize}
+
+But thats a Mathematical proof in the context of mathematics, and proof exist beyond mathamatics, there is a higher notion of a proof, that may have no logical deductions or assumptions.
+this higher level meta notion of a proof can be defined as a method for ascertaining the truth.
+
+now, ascertaining simply meaning establishing truth, verifying truth, and there are lots of ways to ascertain truth in society and even in science.
+
+coming backt to the mathematical definition of proof, it is a verfification of a assertion or proposition by a chain of logical deductions set from a set of axioms. 
+
+
+Let us further elaborate on propositions, logical deductions and axioms, let's start with propositions:
+
+\subsection{Proposition}
+
+A proposition is a statement that is either true or false.
+here is a simple example.
+
+\begin{example}
+  2 + 3 = 5
+\end{example}
+\begin{example}
+  1 + 1 = 3
+\end{example}
+  
+here is a more interesting example...
+
+\begin{example}
+$\forall$n$\in$$\N$, $n^2$+$n$+41 is a prime number.
+\end{example}
+the $n^2$+$n$+41 is an example of a predicate, A Predicate is a proposition whose truth depends on the value of the variable, in this case, $n$ is that variable in the example.
+
+let us further elaborate of the different types of propositions.
+
+\subsection{Atomic proposition}
+These are simple basic, indivisible statements that cannot be further broken down into simpler components.
+
+\begin{example}
+ 2 + 2 = 4, "the sky is blue", 1 + 1 = 2.
+\end{example}
+
+\subsection{Compound proposition}
+These propositions are formed using simple propisiton using logical connectives.
+common logical connectives include:
+
+\begin{itemize}
+  \item \textbf{Conjunction(AND):} $p$ AND $q$ ( both $p$ and $q$ has to be true for the compound propositiob to be true).
+  \item \textbf{Disjunction(OR):} $p$ OR $q$ ( either $p$ or $q$ has to be true for the Disjunction proposition to be true).
+  \item \textbf{Negation(NOT):} "NOT $p$" (The opposite true value of $p$).
+\end{itemize}
+
+\subsection{Conditional proposition}
+These propositions express a relationship of implications. the conditional proposition of "if $p$ then $q$" is denoted as $p$ $\to$ $q$. it is false only when $p$ is true and $q$ is false; otherwise, it is tru it is false only when $p$ is true and $q$ is false; otherwise, it is true. 
+here is an example to further explain: 
+
+\begin{example}
+  $p$: "$x$ $>$ $5$"
+\end{example}
+
+\begin{example}
+  $q$: "$2x > 10$ "
+\end{example}
+
+the conditional propostion is expressed as $p > q$.
+
+\subsection{Biconditional proposition}
+These propositions express bidirectional relationship. The Biconditional propistion "if $p$ and only if $q$" is denoted by $p \leftrightarrow q$. it is true when both $p$ and $q$ have same truth value.
+
+\subsection{Existential proposition}
+These proposition assert the existence of at the least one instances satisfying a given property. 
+
+\end{document}
